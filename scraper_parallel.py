@@ -55,8 +55,8 @@ for legis in legis_list:
   my = legis["MY"]
 
   title_en, paras_en = get_legis_body(en, s)
-  # save_file(title_en + "_EN", paras_en)
+  save_file(title_en + "_EN", paras_en)
 
   if my != None:
     title_my, paras_my = get_legis_body(my, s)
-    # save_file(title_en + "_MY", paras_my)
+    save_file(title_en + "_MY", paras_my)
