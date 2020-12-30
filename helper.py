@@ -12,12 +12,20 @@ def get_legis_body(lawordSn, s):
       paras.append(section.text)
     elif len(paras) > 0:
       paras[-1] += section.text
-
   
+  title = title.replace("/", ",")
+
   return title, paras
 
 def save_file(filename, paras):
   with open(f"data/{filename}.txt", "wb") as f:
+    for para in paras:
+      para = para + "\n"
+      para_encoded = para.encode("utf8")
+      f.write(para_encoded)
+
+def save_file_subordinate(filename, paras):
+  with open(f"data/subordinate/{filename}.txt", "wb") as f:
     for para in paras:
       para = para + "\n"
       para_encoded = para.encode("utf8")
